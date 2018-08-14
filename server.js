@@ -1,17 +1,14 @@
-import express from 'express'; 
-import webpack from 'webpack';
-import dotenv from 'dotenv';
-import expressGraphQL from 'express-graphql';
-import schema from './schema/schema'; // our schema file
+const { ApolloServer } = require('apollo-server');
+const typeDefs = require('./src/data/swapi/typeDefs');
+const resolvers = require('./src/data/swapi/resolvers');
 
-const APP_PORT = 3000;
-const app = express(); 
+// In the most basic sense, the ApolloServer can be started
+// by passing type definitions (typeDefs) and the resolvers
+// responsible for fetching the data for those types.
+const server = new ApolloServer({ typeDefs, resolvers });
 
-app.use('/graphql', expressGraphQL({
-  schema,
-  graphiql: true
-}))
-
-app.listen(4000, () => {
-  console.log('Listening');
+// This `listen` method launches a web-server.  Existing apps
+// can utilize middleware options, which we'll discuss later.
+server.listen().then(({ url }) => {
+  console.log(`🚀  Server ready at ${url}`);
 });

@@ -1,51 +1,14 @@
-import express from 'express'; 
-import webpack from 'webpack';
-import dotenv from 'dotenv';
-import WebpackDevServer from 'webpack-dev-server';
-import graphQLHTTP from 'express-graphql';
-import { schema } from './schema/schema';
+const { ApolloServer } = require('apollo-server');
+const typeDefs = require('./src/data/swapi/typeDefs');
+const resolvers = require('./src/data/swapi/resolvers');
 
-const APP_PORT = 3000;
+// In the most basic sense, the ApolloServer can be started
+// by passing type definitions (typeDefs) and the resolvers
+// responsible for fetching the data for those types.
+const server = new ApolloServer({ typeDefs, resolvers });
 
-// Serve the Relay app
-const compiler = webpack({
-  mode: 'development',
-  entry: [
-    'whatwg-fetch',
-    path.resolve(__dirname, 'js', 'app.js')
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        }
-      }
-    ]
-  },
-  output: {
-    filename: 'app.js',
-    path: '/',
-  },
-});
-
-const app = new WebpackDevServer(compiler, {
-  contentBase: '/public/',
-  publicPath: '/js/',
-  stats: {colors: true},
-});
-
-// Serve static resources
-app.use('/', express.static(path.resolve(__dirname, 'public')));
-
-// Setup GraphQL endpoint
-app.use('/graphql', graphQLHTTP({
-  schema: schema,
-  pretty: true,
-}));
-
-app.listen(APP_PORT, () => {
-  console.log(`App is now running on http://localhost:${APP_PORT}`);
+// This `listen` method launches a web-server.  Existing apps
+// can utilize middleware options, which we'll discuss later.
+server.listen().then(({ url }) => {
+  console.log(`🚀  Server ready at ${url}`);
 });

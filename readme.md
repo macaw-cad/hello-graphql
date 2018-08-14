@@ -32,3 +32,6 @@ No need to worry about low-level networking tasks (fetch functions), all you nee
 GraphQL clients use the concept of higher-order components to fetch the needed data under the hood and make it available in the `props` of your components.
 
 ## Server
+
+## Links
+- [Stitch multiple schemas](https://blog.apollographql.com/graphql-schema-stitching-8af23354ac37)

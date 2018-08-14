@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions js jsx"
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions js jsx",
+    "start": "babel-node ./server.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +18,12 @@
     "react-relay": "^1.6.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
     "babel-plugin-relay": "^1.6.2",
+    "babel-preset-env": "^1.7.0",
+    "express": "^4.16.3",
     "graphql": "^0.13.2",
     "relay-compiler": "^1.6.2"
   }

@@ -1,0 +1,24 @@
+{
+  "name": "graphsql-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions js jsx"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-graphql": "^0.6.12",
+    "graphql-relay": "^0.5.5",
+    "graphql-up": "^1.1.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-relay": "^1.6.2"
+  },
+  "devDependencies": {
+    "babel-plugin-relay": "^1.6.2",
+    "graphql": "^0.13.2",
+    "relay-compiler": "^1.6.2"
+  }
+}

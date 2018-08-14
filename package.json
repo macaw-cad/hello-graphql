@@ -2,29 +2,24 @@
   "name": "graphsql-poc",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions js jsx",
-    "start": "babel-node ./server.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-boost": "^0.1.13",
     "express-graphql": "^0.6.12",
-    "graphql-relay": "^0.5.5",
-    "graphql-up": "^1.1.1",
     "react": "^16.4.2",
+    "react-apollo": "^2.1.11",
     "react-dom": "^16.4.2",
-    "react-relay": "^1.6.2"
+    "react-scripts": "1.1.4"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-relay": "^1.6.2",
-    "babel-preset-env": "^1.7.0",
-    "express": "^4.16.3",
-    "graphql": "^0.13.2",
-    "relay-compiler": "^1.6.2"
+    "graphql": "^0.13.2"
   }
 }

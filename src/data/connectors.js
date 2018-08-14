@@ -1,3 +1,5 @@
+// https://github.com/rafaelugolini/swapi-wrapper-graphql
+
 const fetch = require('node-fetch');
 const DataLoader = require('dataloader');
 

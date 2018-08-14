@@ -2,17 +2,16 @@ import * as React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
-export class ShipsPilots extends React.Component {
+export class Films extends React.Component {
     render() {
         return (
             <Query
                 query={gql`
                 {
-                    getStarships {
-                        name,
-                        pilots {
-                        name
-                        }
+                    getFilms {
+                        title
+                        director
+                        release_date
                     }
                 }
             `}
@@ -23,7 +22,9 @@ export class ShipsPilots extends React.Component {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
 
-                    return <p>Hi</p>;
+                    return data.getFilms.map((film: any, index: number) => (
+                        <li key={index}>{film.title}</li>
+                    ));
                 }}
             </Query>
         );

@@ -1,3 +1,5 @@
+// https://github.com/rafaelugolini/swapi-wrapper-graphql
+
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`

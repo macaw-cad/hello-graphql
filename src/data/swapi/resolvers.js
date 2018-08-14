@@ -1,3 +1,5 @@
+// https://github.com/rafaelugolini/swapi-wrapper-graphql
+
 const RESTConnector = require('../connectors');
 
 const BASE_URL = 'https://swapi.co/api';

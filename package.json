@@ -16,6 +16,7 @@
     "apollo-boost": "^0.1.13",
     "apollo-server": "^2.0.0",
     "dataloader": "^1.4.0",
+    "date-fns": "^1.29.0",
     "express-graphql": "^0.6.12",
     "graphql-tools": "^3.1.1",
     "node-fetch": "^2.2.0",
@@ -28,6 +29,7 @@
     "@types/node": "^10.7.0",
     "@types/react": "^16.4.10",
     "@types/react-dom": "^16.0.7",
+    "dotenv": "^6.0.0",
     "graphql": "^0.13.2",
     "typescript": "^3.0.1"
   }

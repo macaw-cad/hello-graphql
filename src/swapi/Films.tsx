@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import { format, parse } from 'date-fns';
 
 export class Films extends React.Component {
-    render() {
+    public render() {
         return (
             <Query
                 query={gql`
                 {
                     getFilms {
                         title
-                        director
                         release_date
                     }
                 }
@@ -23,11 +23,16 @@ export class Films extends React.Component {
                     if (error) return <p>Error :(</p>;
 
                     return data.getFilms.map((film: any, index: number) => (
-                        <li key={index}>{film.title}</li>
+                        <li key={index}>{film.title} ({this.getYearByDate(film.release_date)})</li>
                     ));
                 }}
             </Query>
         );
+    }
+    
+    private getYearByDate(date: string) {
+        console.log(parse(date));
+        return format(parse(date), 'YYYY');
     }
 }
 

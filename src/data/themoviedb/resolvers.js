@@ -28,7 +28,7 @@ function replacePlaceholders(url, args) {
     return url;
 }
 
-const load = (endpoint, args, context) => (_, args) => {
+const load = (endpoint) => (_, args) => {
     let url = `${BASE_URL}/${endpoint}`;
 
     url = appendApiKey(url);
@@ -38,10 +38,12 @@ const load = (endpoint, args, context) => (_, args) => {
         .then(({ results }) => results);
 }
 
+const loadSingle = (endpoint) => (_, args) => load(endpoint)(_, args).then(results => results[0]);
 
 const resolvers = {
     Query: {
-        movies: load('search/movie?query={query}&include_adults=false')  
+        movies: load('search/movie?query={query}&include_adults=false'),
+        movie_by_title: loadSingle('search/movie?query={query}&include_adults=false'),
     }
 };
 

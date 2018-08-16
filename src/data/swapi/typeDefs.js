@@ -1,8 +1,8 @@
 // https://github.com/rafaelugolini/swapi-wrapper-graphql
 
-const { gql } = require('apollo-server');
+// const { gql } = require('apollo-server');
 
-const typeDefs = gql`
+const typeDefs = `
 type Person {
   name: String
   height: String

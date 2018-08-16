@@ -1,0 +1,7 @@
+query getFilms {
+    getFilms {
+        title
+        episode_id
+        release_date
+    }
+}

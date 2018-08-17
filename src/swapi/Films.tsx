@@ -1,23 +1,14 @@
 import * as React from 'react';
 import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
 import { format, parse } from 'date-fns';
+import { getFilms_getFilms } from '../types/types';
+const query = require('../data/swapi/queries/getFilms.gql');
 
 export class Films extends React.Component {
     public render() {
         return (
             <Query
-                query={gql`
-                {
-                    getFilms {
-                        title
-                        release_date,
-                        movieDbData {
-                            vote_average
-                        }
-                    }
-                }
-            `}
+                query={query}
             >
                 {({ loading, error, data }) => {
                     console.log(loading, error, data);
@@ -25,17 +16,20 @@ export class Films extends React.Component {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
 
-                    return data.getFilms.map((film: any, index: number) => (
-                        <li key={index}>{film.title} ({this.getYearByDate(film.release_date)}), Rating: {film.movieDbData.vote_average}</li>
+                    return data.getFilms.map((film: getFilms_getFilms, index: number) => (
+                        <li key={index}>{film.title} ({this.getYearByDate(film.release_date)}){film.movieDbData ? `, Rating: ${film.movieDbData.vote_average}`: ''}</li>
                     ));
                 }}
             </Query>
         );
     }
     
-    private getYearByDate(date: string) {
-        console.log(parse(date));
-        return format(parse(date), 'YYYY');
+    private getYearByDate(date: string | null): string {
+        if (date) {
+            return format(parse(date), 'YYYY');
+        }
+
+        return '';
     }
 }
 

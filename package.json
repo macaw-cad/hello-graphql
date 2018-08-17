@@ -4,11 +4,12 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "react-scripts-ts start",
+    "start": "node scripts/start.js",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "server": "node server.js"
+    "server": "node server.js",
+    "generate-types": "apollo-codegen introspect-schema http://localhost:4000 --output ./src/schema/schema.json && apollo-codegen generate **/*.gql --schema ./src/schema/schema.json --target typescript --output ./src/types/types.ts"
   },
   "author": "",
   "license": "ISC",
@@ -23,9 +24,11 @@
     "react": "^16.4.2",
     "react-apollo": "^2.1.11",
     "react-dom": "^16.4.2",
-    "react-scripts-ts": "^2.17.0"
+    "react-scripts-ts": "^2.17.0",
+    "webpack": "^3.8.1"
   },
   "devDependencies": {
+    "@types/graphql": "^0.13.4",
     "@types/node": "^10.7.0",
     "@types/react": "^16.4.10",
     "@types/react-dom": "^16.0.7",

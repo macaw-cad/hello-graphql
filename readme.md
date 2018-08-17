@@ -1,3 +1,11 @@
+# GraphQL PoC
+This PoC was created in order to figure out GraphQL combined with Apollo. 
+
+## Converting GraphQL TypeDefs to Typescript
+1. Run the server using `npm run server`. (the schema.json generator uses this server)
+2. Run the command to generate the schema.json and the Typescript file: `npm run generate-types`
+
+
 # GraphQL
 <sup>GraphQL is only a _specification_</sup>
 
@@ -37,4 +45,4 @@ GraphQL clients use the concept of higher-order components to fetch the needed d
 - [Stitch multiple schemas](https://blog.apollographql.com/graphql-schema-stitching-8af23354ac37)
 - [Generate Typescript based on .gql schemas](https://github.com/apollographql/apollo-cli) 
     - [This one should also generate something but doesn't seem to work?](https://github.com/dotansimha/graphql-code-generator)
-- [JSS + React starter application] (https://github.com/Sitecore/jss/tree/master/samples/react)
+- [JSS + React starter application](https://github.com/Sitecore/jss/tree/master/samples/react)

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Query } from 'react-apollo';
 import { format, parse } from 'date-fns';
-import query from '../data/swapi/schema.gql';
 import { getFilms_getFilms } from '../types/types';
+const query = require('../data/swapi/queries/getFilms.gql');
 
 export class Films extends React.Component {
     public render() {

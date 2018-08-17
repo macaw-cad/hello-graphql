@@ -3,5 +3,8 @@ query getFilms {
         title
         episode_id
         release_date
+        planets {
+            name
+        }
     }
 }

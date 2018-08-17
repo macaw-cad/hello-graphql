@@ -1,3 +1,11 @@
+# GraphQL PoC
+This PoC was created in order to figure out GraphQL combined with Apollo. 
+
+## Converting GraphQL TypeDefs to Typescript
+1. Run the server using `npm run server`. (the schema.json generator uses this server)
+2. Run the command to generate the schema.json and the Typescript file: `npm run generate-types`
+
+
 # GraphQL
 <sup>GraphQL is only a _specification_</sup>
 

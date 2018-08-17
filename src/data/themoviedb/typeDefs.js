@@ -5,6 +5,7 @@ const { gql } = require('apollo-server');
 const typeDefs = gql`
     type Query {
         movies(query: String!): [Movie]
+        movie_by_title(query: String!): Movie
         config: Config
         movie(id: Int!): Movie
         movie_genres: [Genre]
@@ -29,6 +30,7 @@ const typeDefs = gql`
         genres: [Genre]
         genre_ids: [Int]
         release_date: String
+        vote_average: Float
     }
     type Tv {
         id: Int

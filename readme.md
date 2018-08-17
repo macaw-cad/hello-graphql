@@ -45,4 +45,4 @@ GraphQL clients use the concept of higher-order components to fetch the needed d
 - [Stitch multiple schemas](https://blog.apollographql.com/graphql-schema-stitching-8af23354ac37)
 - [Generate Typescript based on .gql schemas](https://github.com/apollographql/apollo-cli) 
     - [This one should also generate something but doesn't seem to work?](https://github.com/dotansimha/graphql-code-generator)
-- [JSS + React starter application] (https://github.com/Sitecore/jss/tree/master/samples/react)
+- [JSS + React starter application](https://github.com/Sitecore/jss/tree/master/samples/react)

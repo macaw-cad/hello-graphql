@@ -11,11 +11,16 @@ export interface getFilms_getFilms_planets {
   name: string | null;
 }
 
+export interface getFilms_getFilms_movieDbData {
+  vote_average: number | null;
+}
+
 export interface getFilms_getFilms {
   title: string | null;
   episode_id: number | null;
   release_date: string | null;
   planets: (getFilms_getFilms_planets | null)[] | null;
+  movieDbData: getFilms_getFilms_movieDbData | null;
 }
 
 export interface getFilms {

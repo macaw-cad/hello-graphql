@@ -17,7 +17,7 @@ export class Films extends React.Component {
                     if (error) return <p>Error :(</p>;
 
                     return data.getFilms.map((film: getFilms_getFilms, index: number) => (
-                        <li key={index}>{film.title} ({this.getYearByDate(film.release_date)}), Rating: {film.movieDbData.vote_average}</li>
+                        <li key={index}>{film.title} ({this.getYearByDate(film.release_date)}){film.movieDbData ? `, Rating: ${film.movieDbData.vote_average}`: ''}</li>
                     ));
                 }}
             </Query>

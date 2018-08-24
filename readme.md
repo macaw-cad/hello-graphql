@@ -9,6 +9,9 @@ This PoC was created in order to figure out GraphQL combined with Apollo.
 # GraphQL
 <sup>GraphQL is only a _specification_</sup>
 
+## Tutorial
+The best tutorial out there to get started ([link](https://https://www.howtographql.com/))
+
 ## Concepts
 - Schema 
     - Collection of GraphQL types

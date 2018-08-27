@@ -1,6 +1,11 @@
 # GraphQL PoC
 This PoC was created in order to figure out GraphQL combined with Apollo. 
 
+## ! Before running the app !
+Make sure you add an `.env` file at the root of the project with a "[themoviedb.org](https://www.themoviedb.org/)" API key in this format: `API=xxxxxxx`.
+
+Team developers can find a shared key [here](https://github.com/orgs/macaw-interactive/teams/graphql/discussions/2). 
+
 ## Converting GraphQL TypeDefs to Typescript
 1. Run the server using `npm run server`. (the schema.json generator uses this server)
 2. Run the command to generate the schema.json and the Typescript file: `npm run generate-types`
@@ -19,7 +24,6 @@ The best tutorial out there to get started ([link](https://https://www.howtograp
 - Mutations (Create, update, delete data) ([link](https://graphql.org/learn/queries/#mutations))
 - Subscriptions (Real time updates)
 - Resolver functions (??)
-- 
 
 ## Clients
 2 major GraphQL clients

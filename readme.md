@@ -1,3 +1,5 @@
+Changes from Mirella
+
 # GraphQL PoC
 This PoC was created in order to figure out GraphQL combined with Apollo. 
 
